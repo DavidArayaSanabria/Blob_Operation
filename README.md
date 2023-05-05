@@ -17,4 +17,4 @@ StorageBlobLogs
 
 Out example: 
 
-https://github.com/DavidArayaSanabria/Blob_Operation/blob/53e28ecf44e750d73a4c6c2745ab55c0688b86d6/images/example.png
+![Alt text](https://github.com/DavidArayaSanabria/Blob_Operation/blob/53e28ecf44e750d73a4c6c2745ab55c0688b86d6/images/example.png)
