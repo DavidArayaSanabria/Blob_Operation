@@ -2,6 +2,7 @@
 
 Check who downloaded or uploaded a blob on the Azure Storage Account Container using this KQL query:
 
+
 ```
 StorageBlobLogs
 | join kind=inner (
@@ -12,6 +13,17 @@ StorageBlobLogs
 | where OperationName == "PutBlob" or OperationName == "GetBlob"
 | where parse_json(Properties).caller contains "@"
 | project TimeGenerated,ObjectKey, OperationName, StatusText, CallerIpAddress, ServiceType, Caller
+
+```
+
+You can potentially join the tables using the SubscriptionId if you want, like this: 
+
+```
+StorageBlobLogs
+| join kind=inner (
+    AzureActivity
+    | where SubscriptionId == ""
+) on _SubscriptionId
 
 ```
 
